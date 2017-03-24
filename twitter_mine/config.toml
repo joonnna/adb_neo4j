@@ -1,0 +1,7 @@
+# This is a toml file
+# id is an oauth client_id
+# secret is the oauth client_secret
+
+id = "HGDKTwcFoT9Q3hPS4GD3b8cJD"
+secret = "f1zTmBlM8vms61P1n4AeUKbWmqO16YxiGTnY3CeU365vuekGJI"
+
