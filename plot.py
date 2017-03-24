@@ -64,11 +64,4 @@ r2 = ax.bar(n + width, avg2_list, width, color='b', yerr=std2_list, error_kw=dic
 
 ax.legend((r[0], r2[0]), ('SQL', 'Neo4j'))
 plt.savefig("test.pdf")
-    #rect_list.append(rects)
-    #leg_names.append("%s parameter server(s)" % (test))
-
-
-
-
-
 
