@@ -9,7 +9,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
-\usepackage{tabularx}
+\usepackage{tabularx, caption}
 \usepackage{setspace}
 \usepackage{soul} % Text highlighting
 \usepackage{type1cm} % Scalable Computer Modern font support
@@ -19,6 +19,8 @@
 \usepackage{listings} % To include code blocks
 \usepackage{color}
 \usepackage[acronym]{glossaries}
+
+\def\arraystretch{1.4}
 
 \newcommand{\upsc}[1]{\textsc{#1}}
 \loadglsentries{acronyms}  
@@ -53,7 +55,7 @@ urlcolor=black%
 
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def \thetitle {Awesome graph database benchmark shit}
-\def \thesubtitle {inf-3203}
+\def \thesubtitle {}
 \def \theauthor {Helge Hoff, Kim Hartvedt Andreassen, Jon Foss Mikalsen}
 
 %\pagestyle{fancy}
@@ -80,13 +82,22 @@ urlcolor=black%
 
 \section{Introduction}
 
-\section{Neo4j}
+\section{Background}
+Social network applications are becoming increasingly popular, and traditional SQL databases are not well-suited to store large social networks with relationships between users.
+Representing relationships in SQL databases often results in inefficient table joins, degrading performance significantly.
+ 
+  
 \cite{neo_scale}
 \section{Integration of ShareDrive}
 \section{Benchmark}
-The benchmark consisted of finding friend of friends within a social network dataset.
-These are queries that has to be processed in real time, hence, performance is vital for a good user experience.
-Such queries are typical for social network applications, such as Facebook or Twitter.
+The benchmark consisted of finding friendship relations between users within a social network.
+Finding friends of a user, friends of friends an so on, for each increment the result set increases exponentially.
+Such queries are typical for social network applications, such as Facebook or Twitter, and are processed in real time, therefore, performance is vital for user experience.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.3]{friends.pdf}
+	\caption{Query model for multi-level friendship queries.}
+\end{figure}
 \subsection{Experimental setup}
 A dataset provided by Facebook, containing social circles, was used to conduct the experiment.
 The dataset included several features describing anonymous Facebook users, however, for our experiment, only friendships between users were included.
@@ -99,9 +110,19 @@ Our test environment is as follows:
 	\item Operating system: Ubuntu 16.04
 \end{itemize}
 On Facebook, friendships has to be mutual, hence, only requiring a one-way relationship, but for query simplicity they were represented as two-way relationships in the sql database.
-
 %Friendships between users in the sql database was represented as a two-way relationship, mainly due to query simplicity.
 \subsection{Discussion}
+\begin{table}[t]
+	\centering
+	\begin{tabular}{c|c|c}
+		\textbf{Depth} & \textbf{Neo4j} (s) & \textbf{MySQL} (s) \\ \hline
+		1 & 0.0238 & 0.0563 \\ \hline
+		2 & 0.0366 & 0.147 \\ \hline
+		3 & 0.143 & 3.136 \\ \hline
+		4 & 0.378 & 94.001 \\
+	\end{tabular}
+	\caption{Performance comparison of multi-level friendship queries between Neo4j and MySQL. Query times are shown in seconds.}
+\end{table}
 
 
 \section{Conclusion}
@@ -109,7 +130,7 @@ On Facebook, friendships has to be mutual, hence, only requiring a one-way relat
 
 %%% BIBLOGRAPHY
 
-%\newpage
+\newpage
 
 \bibliographystyle{ieeetr}
 \bibliography{sources}
