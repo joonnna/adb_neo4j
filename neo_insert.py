@@ -16,7 +16,7 @@ def main():
 
     args = init(local_args)
     if args == None:
-        exit_str =  "Non-existing or insufficent config, execute program with -h to view parameters required for config creation\n"
+        exit_str =  "\nNon-existing or insufficent config, execute program with -h to view parameters required for config creation\n"
         sys.exit(exit_str)
 
     driver = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth(args.neo_db, args.neo_pw))

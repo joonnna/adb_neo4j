@@ -89,7 +89,7 @@ def do_test(args, res_file):
         print len(data1)
         print len(data2)
 
-    result_str = "%d\t%f\t%f\t%d" % (args.depth, res1[1], res2[1], len(data1))
+    result_str = "%d\t%f\t%f\t%d\n" % (args.depth, res1[1], res2[1], len(data1))
     res_file.write(result_str)
     res_file.flush()
 

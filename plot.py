@@ -12,7 +12,7 @@ raw_data = data.read()
 data.close()
 
 lines = raw_data.split("\n")
-test_data = [x.split(" ") for x in lines]
+test_data = [x.split("\t") for x in lines]
 
 #Last item is "''"
 test_data.pop()
@@ -62,6 +62,6 @@ for idx, depth in enumerate(num_tests):
 r = ax.bar(n, avg_list, width, color='cyan', yerr=std_list, error_kw=dict(ecolor='black', lw=2, capsize=5, capthick=1))
 r2 = ax.bar(n + width, avg2_list, width, color='b', yerr=std2_list, error_kw=dict(ecolor='black', lw=2, capsize=5, capthick=1))
 
-ax.legend((r[0], r2[0]), ('SQL', 'Neo4j'))
+ax.legend((r[0], r2[0]), ('Neo4j', 'SQL'))
 plt.savefig("test.pdf")
 
