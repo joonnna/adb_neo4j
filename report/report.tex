@@ -86,13 +86,14 @@ urlcolor=black%
 Social network applications are becoming increasingly popular, and traditional SQL databases are not well-suited to store large social networks with relationships between users.
 Representing relationships in SQL databases often results in inefficient table joins, degrading performance significantly.
  
-  
+\todo{Use citation, explain neo4j scaling(index-free-adjacency)}
 \cite{neo_scale}
 \section{Integration of ShareDrive}
 \section{Benchmark}
 The benchmark consisted of finding friendship relations between users within a social network.
 Finding friends of a user, friends of friends an so on, for each increment the result set increases exponentially.
 Such queries are typical for social network applications, such as Facebook or Twitter, and are processed in real time, therefore, performance is vital for user experience.
+\todo{Explain figure, might change placement?}
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.3]{friends.pdf}
@@ -112,6 +113,7 @@ Our test environment is as follows:
 On Facebook, friendships has to be mutual, hence, only requiring a one-way relationship, but for query simplicity they were represented as two-way relationships in the sql database.
 %Friendships between users in the sql database was represented as a two-way relationship, mainly due to query simplicity.
 \subsection{Discussion}
+\todo{Explain result table etc}
 \begin{table}[t]
 	\centering
 	\begin{tabular}{c|c|c}
