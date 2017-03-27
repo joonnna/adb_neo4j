@@ -1,0 +1,123 @@
+\documentclass[a4paper, 12pt, conference]{IEEEtran}
+\special{papersize=210mm,297mm} % Fix compatibility issues. A4 dimensions hard coded.
+\usepackage[a4paper, top=0.8in, bottom=0.8in, left=0.6in, right=0.6in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{color, graphicx}
+\usepackage[official]{eurosym}
+\usepackage{fancyhdr}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{soul} % Text highlighting
+\usepackage{type1cm} % Scalable Computer Modern font support
+\usepackage{verbatim}
+\usepackage{hyperref} % Support for PDF Hyper References and links
+\usepackage{lastpage} % To get number of pages
+\usepackage{listings} % To include code blocks
+\usepackage{color}
+\usepackage[acronym]{glossaries}
+
+\newcommand{\upsc}[1]{\textsc{#1}}
+\loadglsentries{acronyms}  
+\makeglossaries
+
+\newcommand{\todo}[1]{}
+\renewcommand{\todo}[1]{{\color{blue} TODO:  {#1}}}
+
+\def \FIXME {{\parindent -60px \sethlcolor{red} \color{white} \texthl{\textbf{FIXME}} \sethlcolor{yellow} \hskip 5px}}
+\def \redhl #1{\sethlcolor{red} {\color{yellow} \textbf{\texthl{#1}}} \sethlcolor{yellow}}
+\def \sitat #1{\textsuperscript{\cite{#1}}}
+\def \const #1{\penalty 100 \hbox{\texttt{#1}}}
+\newcommand{\HRule}{\rule{\linewidth}{0.2mm}}
+
+
+
+\hypersetup{
+colorlinks,%
+citecolor=black,%
+filecolor=black,%
+linkcolor=black,%
+urlcolor=black%
+}
+
+\setlength{\headheight}{14pt}
+
+\ifCLASSINFOpdf
+
+\else
+
+\fi
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def \thetitle {Awesome graph database benchmark shit}
+\def \thesubtitle {inf-3203}
+\def \theauthor {Helge Hoff, Kim Hartvedt Andreassen, Jon Foss Mikalsen}
+
+%\pagestyle{fancy}
+\pagestyle{fancyplain} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{1pt} % customise the layout...
+\renewcommand{\footrulewidth}{0pt}
+\lhead{\fancyplain{}{\thetitle{} -- \thesubtitle{}}}\chead{}\rhead{\fancyplain{}{\theauthor{}}}
+\lfoot{}\cfoot{Page {\thepage} of \pageref{LastPage}}\rfoot{}
+
+
+\begin{document}
+\title{\thetitle}
+\author{\theauthor}
+
+\maketitle
+\thispagestyle{plain}
+
+%ABSTRACT
+%\begin{abstract}
+%When written in 
+%\end{abstract}
+ 
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+
+\section{Neo4j}
+\section{Integration of ShareDrive}
+\section{Benchmark}
+The benchmark consisted of finding friend of friends within a social network dataset.
+These are queries that has to be processed in real time, hence, performance is vital for a good user experience.
+Such queries are typical for social network applications, such as Facebook or Twitter.
+\subsection{Experimental setup}
+A dataset provided by Facebook, containing social circles, was used to conduct the experiment.
+The dataset included several features describing anonymous Facebook users, however, for our experiment, only friendships between users were included.
+Our test environment is as follows: 
+\begin{itemize}
+	\item Processor: Intel® Core™ i7-4500U CPU @ 1.80GHz.
+	\item 8GB of memory. 
+	\item Neo4j version: 3.1.2
+	\item SQL database: MySQL 5.7.17
+	\item Operating system: Ubuntu 16.04
+\end{itemize}
+On Facebook, friendships has to be mutual, hence, only requiring a one-way relationship, but for query simplicity they were represented as two-way relationships in the sql database.
+
+%Friendships between users in the sql database was represented as a two-way relationship, mainly due to query simplicity.
+\subsection{Discussion}
+
+
+\section{Conclusion}
+
+
+%%% BIBLOGRAPHY
+
+%\newpage
+
+%\bibliographystyle{ieeetr}
+%\bibliography{sources}
+
+\end{document}
+
+
+
+
+
+
+
