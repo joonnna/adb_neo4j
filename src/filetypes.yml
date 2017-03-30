@@ -1,0 +1,79 @@
+dir:
+    ext: 
+    ftype: Folder
+bmp:
+    ext: .bmp
+    ftype: Picture
+BMP:
+    ext: .BMP
+    ftype: Picture
+jpg:
+    ext: .jpg
+    ftype: Picture
+JPG:
+    ext: .JPG
+    ftype: Picture
+gif:
+    ext: .gif
+    ftype: Picture
+GIF:
+    ext: .GIF
+    ftype: Picture
+png:
+    ext: .png
+    ftype: Picture
+PNG:
+    ext: .PNG
+    ftype: Picture
+avi:
+    ext: .avi
+    ftype: Video
+AVI:
+    ext: .AVI
+    ftype: Video
+mov:
+    ext: .mov
+    ftype: Video
+MOV:
+    ext: .MOV
+    ftype: Video  
+MP4:
+    ext: .MP4
+    ftype: Video
+mp4:
+    ext: .mp4
+    ftype: Video
+ogg:
+    ext: .ogg
+    ftype: Video
+OGG:
+    ext: .OGG
+    ftype: Video
+wmv:
+    ext: .wmv
+    ftype: Video
+WMV:
+    ext: .WMV
+    ftype: Video
+mp3:
+    ext: .mp3
+    ftype: Audio
+MP3:
+    ext: .MP3
+    ftype: Audio
+wav:
+    ext: .wav
+    ftype: Audio
+WAV:
+    ext: .WAV
+    ftype: Audio
+WMA:
+    ext: .WMA
+    ftype: Audio
+wma:
+    ext: .wma
+    ftype: Audio
+
+ 
+    
+
