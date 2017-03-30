@@ -44,6 +44,9 @@ for idx, depth in enumerate(num_tests):
     vals = [float(x[1]) for x in test_data if int(x[0]) == depth]
     vals2 = [float(x[2]) for x in test_data if int(x[0]) == depth]
 
+    print len(vals)
+    print len(vals2)
+
     total = sum(vals)
     avg = total/len(vals)
     std = np.std(vals)
@@ -57,7 +60,6 @@ for idx, depth in enumerate(num_tests):
 
     std_list.append(std)
     std2_list.append(std2)
-
 
 r = ax.bar(n, avg_list, width, color='cyan', yerr=std_list, error_kw=dict(ecolor='black', lw=2, capsize=5, capthick=1))
 r2 = ax.bar(n + width, avg2_list, width, color='b', yerr=std2_list, error_kw=dict(ecolor='black', lw=2, capsize=5, capthick=1))
