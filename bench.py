@@ -80,14 +80,9 @@ def do_test(args, res_file):
 
     diff = data1.symmetric_difference(data2)
     if len(diff) != 0:
-        print "SHIT WENT WRONG FUCKERS"
-        print len(data1)
-        print len(data2)
-        print len(diff)
+        print "Difference in the returned sets : %d" % (len(diff)
     else:
-        print "FUCK YE"
-        print len(data1)
-        print len(data2)
+        print "Test Complete!"
 
     result_str = "%d\t%f\t%f\t%d\n" % (args.depth, res1[1], res2[1], len(data1))
     res_file.write(result_str)
